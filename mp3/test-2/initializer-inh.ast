@@ -1,0 +1,239 @@
+#25
+_program
+  #7
+  _class
+    A
+    IO
+    "initializer-inh.cl"
+    (
+    #2
+    _attr
+      o
+      Object
+      #2
+      _dispatch
+        #2
+        _object
+          self
+        : SELF_TYPE
+        f
+        (
+        )
+      : Object
+    #3
+    _attr
+      x
+      Int
+      #3
+      _int
+        12
+      : Int
+    #6
+    _method
+      f
+      Object
+      #6
+      _block
+        #5
+        _dispatch
+          #5
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #5
+          _string
+            "A.f: x = "
+          : String
+          )
+        : SELF_TYPE
+        #5
+        _dispatch
+          #5
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #5
+          _object
+            x
+          : Int
+          )
+        : SELF_TYPE
+        #5
+        _dispatch
+          #5
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #5
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #16
+  _class
+    B
+    A
+    "initializer-inh.cl"
+    (
+    #12
+    _attr
+      y
+      Int
+      #12
+      _block
+        #11
+        _dispatch
+          #11
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #11
+          _string
+            "initializing B.y. here x = "
+          : String
+          )
+        : SELF_TYPE
+        #11
+        _dispatch
+          #11
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #11
+          _object
+            x
+          : Int
+          )
+        : SELF_TYPE
+        #11
+        _dispatch
+          #11
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #11
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+        #12
+        _int
+          13
+        : Int
+      : Int
+    #15
+    _method
+      f
+      Object
+      #15
+      _block
+        #14
+        _dispatch
+          #14
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #14
+          _string
+            "B.f: y = "
+          : String
+          )
+        : SELF_TYPE
+        #14
+        _dispatch
+          #14
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #14
+          _object
+            y
+          : Int
+          )
+        : SELF_TYPE
+        #14
+        _dispatch
+          #14
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #14
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #25
+  _class
+    Main
+    IO
+    "initializer-inh.cl"
+    (
+    #24
+    _method
+      main
+      Object
+      #24
+      _block
+        #20
+        _dispatch
+          #20
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #20
+          _string
+            "new A\n"
+          : String
+          )
+        : SELF_TYPE
+        #21
+        _new
+          A
+        : A
+        #22
+        _dispatch
+          #22
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #22
+          _string
+            "new B\n"
+          : String
+          )
+        : SELF_TYPE
+        #23
+        _new
+          B
+        : B
+      : B
+    )

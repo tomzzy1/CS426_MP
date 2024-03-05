@@ -1,0 +1,170 @@
+#32
+_program
+  #5
+  _class
+    A
+    Object
+    "equal4_o.cl"
+    (
+    #4
+    _attr
+      a
+      Int
+      #4
+      _int
+        2
+      : Int
+    )
+  #9
+  _class
+    B
+    Object
+    "equal4_o.cl"
+    (
+    #8
+    _attr
+      b
+      Int
+      #8
+      _int
+        3
+      : Int
+    )
+  #32
+  _class
+    Main
+    IO
+    "equal4_o.cl"
+    (
+    #13
+    _attr
+      a1
+      A
+      #13
+      _new
+        A
+      : A
+    #14
+    _attr
+      a2
+      A
+      #14
+      _no_expr
+      : _no_type
+    #15
+    _attr
+      a3
+      A
+      #15
+      _no_expr
+      : _no_type
+    #16
+    _attr
+      b
+      B
+      #16
+      _no_expr
+      : _no_type
+    #31
+    _method
+      main
+      SELF_TYPE
+      #30
+      _cond
+        #18
+        _eq
+          #18
+          _object
+            a1
+          : A
+          #18
+          _object
+            a2
+          : A
+        : Bool
+        #19
+        _dispatch
+          #19
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #19
+          _string
+            "not ok!\n"
+          : String
+          )
+        : SELF_TYPE
+        #29
+        _cond
+          #21
+          _eq
+            #21
+            _object
+              a2
+            : A
+            #21
+            _object
+              a3
+            : A
+          : Bool
+          #26
+          _cond
+            #22
+            _eq
+              #22
+              _object
+                b
+              : B
+              #22
+              _object
+                a2
+              : A
+            : Bool
+            #23
+            _dispatch
+              #23
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #23
+              _string
+                "ok!\n"
+              : String
+              )
+            : SELF_TYPE
+            #25
+            _dispatch
+              #25
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #25
+              _string
+                "not ok!\n"
+              : String
+              )
+            : SELF_TYPE
+          : SELF_TYPE
+          #28
+          _dispatch
+            #28
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #28
+            _string
+              "not ok!\n"
+            : String
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )

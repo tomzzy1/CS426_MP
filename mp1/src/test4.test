@@ -1,0 +1,4 @@
+class A {
+  a : String <- "This \
+is OK";
+};

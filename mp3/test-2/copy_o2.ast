@@ -1,0 +1,161 @@
+#22
+_program
+  #5
+  _class
+    A
+    Object
+    "copy_o2.cl"
+    (
+    #2
+    _attr
+      answerToAll
+      Int
+      #2
+      _int
+        42
+      : Int
+    #3
+    _method
+      getAnswerToAll
+      Int
+      #3
+      _object
+        answerToAll
+      : Int
+    #4
+    _method
+      setAnswerToAll
+      #4
+      _formal
+        myAns
+        Int
+      SELF_TYPE
+      #4
+      _block
+        #4
+        _assign
+          answerToAll
+          #4
+          _object
+            myAns
+          : Int
+        : Int
+        #4
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #22
+  _class
+    Main
+    IO
+    "copy_o2.cl"
+    (
+    #20
+    _method
+      main
+      Object
+      #20
+      _let
+        a
+        A
+        #11
+        _new
+          A
+        : A
+        #20
+        _let
+          copy_a
+          A
+          #13
+          _no_expr
+          : _no_type
+          #19
+          _block
+            #14
+            _assign
+              copy_a
+              #14
+              _dispatch
+                #14
+                _object
+                  a
+                : A
+                copy
+                (
+                )
+              : A
+            : A
+            #15
+            _dispatch
+              #15
+              _object
+                copy_a
+              : A
+              setAnswerToAll
+              (
+              #15
+              _int
+                21
+              : Int
+              )
+            : A
+            #16
+            _dispatch
+              #16
+              _object
+                self
+              : SELF_TYPE
+              out_int
+              (
+              #16
+              _dispatch
+                #16
+                _object
+                  a
+                : A
+                getAnswerToAll
+                (
+                )
+              : Int
+              )
+            : SELF_TYPE
+            #17
+            _dispatch
+              #17
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #17
+              _string
+                " "
+              : String
+              )
+            : SELF_TYPE
+            #18
+            _dispatch
+              #18
+              _object
+                self
+              : SELF_TYPE
+              out_int
+              (
+              #18
+              _dispatch
+                #18
+                _object
+                  copy_a
+                : A
+                getAnswerToAll
+                (
+                )
+              : Int
+              )
+            : SELF_TYPE
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )

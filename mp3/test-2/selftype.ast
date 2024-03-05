@@ -1,0 +1,51 @@
+#15
+_program
+  #6
+  _class
+    A
+    Object
+    "selftype.cl"
+    (
+    #5
+    _method
+      me
+      SELF_TYPE
+      #5
+      _object
+        self
+      : SELF_TYPE
+    )
+  #10
+  _class
+    B
+    A
+    "selftype.cl"
+    (
+    )
+  #15
+  _class
+    Main
+    Object
+    "selftype.cl"
+    (
+    #14
+    _method
+      main
+      String
+      #14
+      _dispatch
+        #14
+        _dispatch
+          #14
+          _new
+            B
+          : B
+          me
+          (
+          )
+        : B
+        type_name
+        (
+        )
+      : String
+    )

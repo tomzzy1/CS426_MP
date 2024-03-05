@@ -1,0 +1,319 @@
+#32
+_program
+  #3
+  _class
+    A
+    Object
+    "dispatch5_o.cl"
+    (
+    #2
+    _method
+      f
+      Int
+      #2
+      _int
+        5
+      : Int
+    )
+  #7
+  _class
+    B
+    A
+    "dispatch5_o.cl"
+    (
+    )
+  #11
+  _class
+    C
+    B
+    "dispatch5_o.cl"
+    (
+    #10
+    _method
+      f
+      Int
+      #10
+      _int
+        6
+      : Int
+    )
+  #32
+  _class
+    Main
+    IO
+    "dispatch5_o.cl"
+    (
+    #14
+    _attr
+      a
+      A
+      #14
+      _new
+        A
+      : A
+    #15
+    _attr
+      b
+      A
+      #15
+      _new
+        B
+      : B
+    #16
+    _attr
+      c
+      A
+      #16
+      _new
+        C
+      : C
+    #17
+    _attr
+      bb
+      B
+      #17
+      _new
+        B
+      : B
+    #18
+    _attr
+      cc
+      C
+      #18
+      _new
+        C
+      : C
+    #31
+    _method
+      main
+      SELF_TYPE
+      #31
+      _block
+        #20
+        _dispatch
+          #20
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #20
+          _dispatch
+            #20
+            _object
+              a
+            : A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #21
+        _dispatch
+          #21
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #21
+          _dispatch
+            #21
+            _object
+              b
+            : A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #22
+        _dispatch
+          #22
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #22
+          _dispatch
+            #22
+            _object
+              c
+            : A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #23
+        _dispatch
+          #23
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #23
+          _dispatch
+            #23
+            _object
+              cc
+            : C
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #24
+        _dispatch
+          #24
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #24
+          _static_dispatch
+            #24
+            _object
+              cc
+            : C
+            C
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #25
+        _dispatch
+          #25
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #25
+          _static_dispatch
+            #25
+            _object
+              cc
+            : C
+            B
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #26
+        _dispatch
+          #26
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #26
+          _static_dispatch
+            #26
+            _object
+              cc
+            : C
+            A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #27
+        _dispatch
+          #27
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #27
+          _dispatch
+            #27
+            _object
+              bb
+            : B
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #28
+        _dispatch
+          #28
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #28
+          _static_dispatch
+            #28
+            _object
+              bb
+            : B
+            B
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #29
+        _dispatch
+          #29
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #29
+          _static_dispatch
+            #29
+            _object
+              bb
+            : B
+            A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #30
+        _dispatch
+          #30
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #30
+          _static_dispatch
+            #30
+            _object
+              a
+            : A
+            A
+            f
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

@@ -1,0 +1,53 @@
+#7
+_program
+  #7
+  _class
+    Main
+    IO
+    "initializers.cl"
+    (
+    #2
+    _attr
+      b
+      Main
+      #2
+      _dispatch
+        #2
+        _object
+          self
+        : SELF_TYPE
+        out_int
+        (
+        #2
+        _object
+          x
+        : Int
+        )
+      : SELF_TYPE
+    #3
+    _attr
+      x
+      Int
+      #3
+      _int
+        12
+      : Int
+    #6
+    _method
+      main
+      Object
+      #5
+      _dispatch
+        #5
+        _object
+          self
+        : SELF_TYPE
+        out_int
+        (
+        #5
+        _object
+          x
+        : Int
+        )
+      : SELF_TYPE
+    )

@@ -1,0 +1,55 @@
+#8
+_program
+  #8
+  _class
+    Main
+    IO
+    "equal2_o.cl"
+    (
+    #7
+    _method
+      main
+      SELF_TYPE
+      #6
+      _cond
+        #6
+        _eq
+          #6
+          _string
+            "s1"
+          : String
+          #6
+          _string
+            "s1"
+          : String
+        : Bool
+        #6
+        _dispatch
+          #6
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #6
+          _string
+            "ok!\n"
+          : String
+          )
+        : SELF_TYPE
+        #6
+        _dispatch
+          #6
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #6
+          _string
+            "not ok!\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

@@ -1,0 +1,122 @@
+#23
+_program
+  #5
+  _class
+    A
+    Object
+    "equal3_o.cl"
+    (
+    #4
+    _attr
+      a
+      Int
+      #4
+      _int
+        2
+      : Int
+    )
+  #23
+  _class
+    Main
+    IO
+    "equal3_o.cl"
+    (
+    #9
+    _attr
+      a1
+      A
+      #9
+      _new
+        A
+      : A
+    #10
+    _attr
+      a2
+      A
+      #10
+      _new
+        A
+      : A
+    #11
+    _attr
+      a3
+      A
+      #11
+      _object
+        a2
+      : A
+    #22
+    _method
+      main
+      SELF_TYPE
+      #21
+      _cond
+        #13
+        _eq
+          #13
+          _object
+            a1
+          : A
+          #13
+          _object
+            a2
+          : A
+        : Bool
+        #14
+        _dispatch
+          #14
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #14
+          _string
+            "not ok!\n"
+          : String
+          )
+        : SELF_TYPE
+        #20
+        _cond
+          #16
+          _eq
+            #16
+            _object
+              a2
+            : A
+            #16
+            _object
+              a3
+            : A
+          : Bool
+          #17
+          _dispatch
+            #17
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #17
+            _string
+              "ok!\n"
+            : String
+            )
+          : SELF_TYPE
+          #19
+          _dispatch
+            #19
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #19
+            _string
+              "not ok!\n"
+            : String
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )

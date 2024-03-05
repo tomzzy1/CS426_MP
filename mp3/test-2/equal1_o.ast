@@ -1,0 +1,69 @@
+#9
+_program
+  #9
+  _class
+    Main
+    IO
+    "equal1_o.cl"
+    (
+    #5
+    _method
+      func
+      Bool
+      #5
+      _eq
+        #5
+        _int
+          2
+        : Int
+        #5
+        _int
+          5
+        : Int
+      : Bool
+    #8
+    _method
+      main
+      SELF_TYPE
+      #7
+      _cond
+        #7
+        _dispatch
+          #7
+          _object
+            self
+          : SELF_TYPE
+          func
+          (
+          )
+        : Bool
+        #7
+        _dispatch
+          #7
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #7
+          _string
+            "not ok!\n"
+          : String
+          )
+        : SELF_TYPE
+        #7
+        _dispatch
+          #7
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #7
+          _string
+            "ok!\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

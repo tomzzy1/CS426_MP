@@ -1,0 +1,70 @@
+#name "bison_test_bad.cl"
+#11 CLASS
+#11 TYPEID A
+#11 '{'
+#12 '}'
+#12 ';'
+#14 CLASS
+#14 TYPEID F
+#14 '{'
+#15 OBJECTID a
+#15 ':'
+#15 TYPEID Int
+#15 ASSIGN
+#15 '{'
+#16 NEW
+#16 TYPEID D
+#16 ';'
+#17 NEW
+#17 OBJECTID a
+#17 ';'
+#18 OBJECTID c
+#18 '+'
+#18 OBJECTID d
+#18 ';'
+#19 '}'
+#19 ';'
+#20 OBJECTID b
+#20 ':'
+#20 OBJECTID float
+#20 ASSIGN
+#20 '{'
+#21 LET
+#21 IN
+#21 OBJECTID o
+#21 ';'
+#22 OBJECTID c
+#22 '+'
+#22 OBJECTID d
+#22 ';'
+#23 '}'
+#23 ';'
+#24 '}'
+#24 ';'
+#27 CLASS
+#27 OBJECTID b
+#27 INHERITS
+#27 TYPEID A
+#27 '{'
+#28 '}'
+#28 ';'
+#31 CLASS
+#31 TYPEID C
+#31 INHERITS
+#31 OBJECTID a
+#31 '{'
+#32 '}'
+#32 ';'
+#35 CLASS
+#35 TYPEID D
+#35 OBJECTID inherts
+#35 TYPEID A
+#35 '{'
+#36 '}'
+#36 ';'
+#39 CLASS
+#39 TYPEID E
+#39 INHERITS
+#39 TYPEID A
+#39 '{'
+#40 ';'

@@ -1,0 +1,723 @@
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./PR491.ll -o PR491_opt.ll
+UnitLICM running on test
+UnitLoopAnalysis running on test
+UnitLICM running on assert_fail
+UnitLoopAnalysis running on assert_fail
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 2 aa                           - Number of MayAlias results
+ 2 aa                           - Number of MustAlias results
+40 assume-queries               - Number of Queries into an assume assume bundles
+ 4 basicaa                      - Number of times a GEP is decomposed
+ 1 correlated-value-propagation - Number of ands removed
+48 early-cse                    - Number of instructions simplified or DCE'd
+ 3 globaldce                    - Number of functions removed
+ 4 globaldce                    - Number of global variables removed
+ 1 inline                       - Number of functions deleted because all callers found
+ 3 inline                       - Number of functions inlined
+ 3 inline-cost                  - Number of call sites analyzed
+14 instcombine                  - Number of insts combined
+ 1 instcombine                  - Number of dead inst eliminated
+ 1 instcombine                  - Number of instructions sunk
+10 instcombine                  - Number of instruction combining iterations performed
+ 4 jump-threading               - Number of terminators folded
+ 4 mem2reg                      - Number of alloca's promoted
+ 3 mem2reg                      - Number of alloca's promoted with a single store
+ 4 sccp                         - Number of basic blocks unreachable
+16 sccp                         - Number of instructions removed
+ 2 simplifycfg                  - Number of blocks simplified
+ 3 sroa                         - Maximum number of partitions per alloca
+ 7 sroa                         - Maximum number of uses of a partition
+52 sroa                         - Number of alloca partition uses rewritten
+ 8 sroa                         - Number of alloca partitions formed
+ 4 sroa                         - Number of allocas analyzed for replacement
+62 sroa                         - Number of instructions deleted
+ 8 sroa                         - Number of new, smaller allocas introduced
+ 6 sroa                         - Number of allocas promoted to SSA values
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./almabench.ll -o almabench_opt.ll
+UnitLICM running on anpm
+UnitLoopAnalysis running on anpm
+UnitLICM running on planetpv
+UnitLoopAnalysis running on planetpv
+UnitLICM running on radecdist
+UnitLoopAnalysis running on radecdist
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 14 UnitLICM       - Number of computational instructions hoisted
+ 17 aa             - Number of MustAlias results
+  6 aa             - Number of NoAlias results
+770 assume-queries - Number of Queries into an assume assume bundles
+ 12 basicaa        - Number of times a GEP is decomposed
+ 58 early-cse      - Number of instructions CSE'd
+  2 early-cse      - Number of load instructions CSE'd
+  3 inline         - Number of functions inlined
+  4 inline-cost    - Number of call sites analyzed
+139 instcombine    - Number of insts combined
+ 49 instcombine    - Number of dead inst eliminated
+ 14 instcombine    - Number of instructions sunk
+ 21 instcombine    - Number of instruction combining iterations performed
+  5 ir             - Number of renumberings across all blocks
+  2 mem2reg        - Number of dead alloca's removed
+  3 mem2reg        - Number of alloca's promoted within one block
+ 13 mem2reg        - Number of PHI nodes inserted
+ 49 mem2reg        - Number of alloca's promoted
+ 33 mem2reg        - Number of alloca's promoted with a single store
+  1 simplifycfg    - Number of branches folded into predecessor basic block
+ 25 simplifycfg    - Number of blocks simplified
+  3 sroa           - Number of allocas analyzed for replacement
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./doloop.ll -o doloop_opt.ll
+UnitLICM running on foo
+UnitLoopAnalysis running on foo
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 aa                           - Number of MustAlias results
+2 aa                           - Number of NoAlias results
+8 assume-queries               - Number of Queries into an assume assume bundles
+1 correlated-value-propagation - Number of no-signed-wrap deductions for add
+1 correlated-value-propagation - Number of no-wrap deductions for add
+1 correlated-value-propagation - Number of no-signed-wrap deductions
+1 correlated-value-propagation - Number of no-wrap deductions
+1 early-cse                    - Number of instructions CSE'd
+2 globaldce                    - Number of functions removed
+0 instcombine                  - Negator: Maximal traversal depth ever reached while attempting to sink negation
+1 instcombine                  - Negator: Maximal number of new instructions created during negation attempt
+1 instcombine                  - Negator: Maximal number of values ever visited while attempting to sink negation
+1 instcombine                  - Negator: Number of new negated instructions created, total
+1 instcombine                  - Negator: Number of new negated instructions created in successful negation sinking attempts
+1 instcombine                  - Negator: Number of negations successfully sinked
+1 instcombine                  - Negator: Total number of values visited during attempts to sink negation
+1 instcombine                  - Negator: Number of negations attempted to be sinked
+4 instcombine                  - Number of insts combined
+1 instcombine                  - Number of dead inst eliminated
+4 instcombine                  - Number of instruction combining iterations performed
+1 jump-threading               - Number of terminators folded
+3 mem2reg                      - Number of PHI nodes inserted
+6 mem2reg                      - Number of alloca's promoted
+4 mem2reg                      - Number of alloca's promoted with a single store
+4 sccp                         - Number of instructions removed
+4 simplifycfg                  - Number of blocks simplified
+1 simplifycfg                  - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./fannkuch.ll -o fannkuch_opt.ll
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on fannkuch
+UnitLoopAnalysis running on fannkuch
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  4 UnitLICM       - Number of computational instructions hoisted
+ 97 aa             - Number of MayAlias results
+ 42 aa             - Number of MustAlias results
+204 aa             - Number of NoAlias results
+288 assume-queries - Number of Queries into an assume assume bundles
+218 basicaa        - Number of times a GEP is decomposed
+  2 build-libcalls - Number of function returns inferred as noundef returns
+  1 build-libcalls - Number of functions inferred as nounwind
+  9 early-cse      - Number of instructions CSE'd
+  2 globaldce      - Number of functions removed
+  1 globaldce      - Number of global variables removed
+  1 inline         - Number of functions deleted because all callers found
+  1 inline         - Number of functions inlined
+  1 inline-cost    - Number of call sites analyzed
+ 34 instcombine    - Number of insts combined
+  2 instcombine    - Number of dead inst eliminated
+  1 instcombine    - Number of library calls simplified
+  7 instcombine    - Number of instruction combining iterations performed
+  5 ir             - Number of renumberings across all blocks
+ 17 mem2reg        - Number of PHI nodes inserted
+ 20 mem2reg        - Number of alloca's promoted
+ 11 mem2reg        - Number of alloca's promoted with a single store
+ 16 simplifycfg    - Number of blocks simplified
+  1 simplifycfg    - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./ffbench.ll -o ffbench_opt.ll
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on fourn
+UnitLoopAnalysis running on fourn
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 11 UnitLICM                     - Number of computational instructions hoisted
+  2 UnitLICM                     - Number of load instructions hoisted
+187 aa                           - Number of MayAlias results
+ 81 aa                           - Number of MustAlias results
+ 79 aa                           - Number of NoAlias results
+ 10 adce                         - Number of instructions removed
+515 assume-queries               - Number of Queries into an assume assume bundles
+592 basicaa                      - Number of times a GEP is decomposed
+  2 build-libcalls               - Number of arguments inferred as nocapture
+  5 build-libcalls               - Number of function returns inferred as noundef returns
+  1 build-libcalls               - Number of functions inferred as nounwind
+  2 correlated-value-propagation - Number of no-unsigned-wrap deductions
+  2 correlated-value-propagation - Number of no-wrap deductions
+  1 correlated-value-propagation - Number of sext converted to zext
+  2 correlated-value-propagation - Number of no-unsigned-wrap deductions for shl
+  2 correlated-value-propagation - Number of no-wrap deductions for shl
+ 27 early-cse                    - Number of instructions CSE'd
+  2 early-cse                    - Number of load instructions CSE'd
+  2 globaldce                    - Number of functions removed
+  2 inline-cost                  - Number of call sites analyzed
+  0 instcombine                  - Negator: Maximal traversal depth ever reached while attempting to sink negation
+  1 instcombine                  - Negator: Maximal number of values ever visited while attempting to sink negation
+ 15 instcombine                  - Negator: Total number of values visited during attempts to sink negation
+ 15 instcombine                  - Negator: Number of negations attempted to be sinked
+ 81 instcombine                  - Number of insts combined
+  5 instcombine                  - Number of constant folds
+ 10 instcombine                  - Number of dead inst eliminated
+  1 instcombine                  - Number of library calls simplified
+ 13 instcombine                  - Number of instructions sunk
+ 13 instcombine                  - Number of instruction combining iterations performed
+  5 ir                           - Number of renumberings across all blocks
+ 31 mem2reg                      - Number of PHI nodes inserted
+ 51 mem2reg                      - Number of alloca's promoted
+ 29 mem2reg                      - Number of alloca's promoted with a single store
+374 memory-builtins              - Number of arguments with unsolved size and offset
+ 13 reassociate                  - Number of insts reassociated
+  1 simplifycfg                  - Number of branches folded into predecessor basic block
+  1 simplifycfg                  - Number of common instruction 'blocks' hoisted up to the begin block
+  1 simplifycfg                  - Number of common instructions hoisted up to the begin block
+ 45 simplifycfg                  - Number of blocks simplified
+  1 simplifycfg                  - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./huffbench.ll -o huffbench_opt.ll
+UnitLICM running on generate_test_data
+UnitLoopAnalysis running on generate_test_data
+UnitLICM running on compdecomp
+UnitLoopAnalysis running on compdecomp
+UnitLICM running on heap_adjust
+UnitLoopAnalysis running on heap_adjust
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on random4
+UnitLoopAnalysis running on random4
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  13 UnitLICM                     - Number of computational instructions hoisted
+   4 UnitLICM                     - Number of load instructions hoisted
+  26 aa                           - Number of MayAlias results
+  49 aa                           - Number of MustAlias results
+ 113 aa                           - Number of NoAlias results
+1339 assume-queries               - Number of Queries into an assume assume bundles
+ 112 basicaa                      - Number of times a GEP is decomposed
+   2 build-libcalls               - Number of arguments inferred as nocapture
+   5 build-libcalls               - Number of function returns inferred as noundef returns
+   1 build-libcalls               - Number of functions inferred as nounwind
+   2 capture-tracking             - Number of pointers maybe captured
+   2 correlated-value-propagation - Number of no-signed-wrap deductions for add
+   5 correlated-value-propagation - Number of no-unsigned-wrap deductions for add
+   7 correlated-value-propagation - Number of no-wrap deductions for add
+   2 correlated-value-propagation - Number of no-signed-wrap deductions for mul
+   2 correlated-value-propagation - Number of no-wrap deductions for mul
+   4 correlated-value-propagation - Number of no-signed-wrap deductions
+   7 correlated-value-propagation - Number of no-unsigned-wrap deductions
+  11 correlated-value-propagation - Number of no-wrap deductions
+   1 correlated-value-propagation - Number of phis propagated
+   2 correlated-value-propagation - Number of no-unsigned-wrap deductions for shl
+   2 correlated-value-propagation - Number of no-wrap deductions for shl
+  50 early-cse                    - Number of instructions CSE'd
+   1 early-cse                    - Number of compare instructions CVP'd
+  10 early-cse                    - Number of load instructions CSE'd
+   2 early-cse                    - Number of trivial dead stores removed
+   2 inline                       - Number of functions deleted because all callers found
+   5 inline                       - Number of functions inlined
+   6 inline-cost                  - Number of call sites analyzed
+   1 instcombine                  - Negator: Maximal traversal depth ever reached while attempting to sink negation
+   1 instcombine                  - Negator: Maximal number of new instructions created during negation attempt
+   2 instcombine                  - Negator: Maximal number of values ever visited while attempting to sink negation
+   2 instcombine                  - Negator: Number of new negated instructions created, total
+   2 instcombine                  - Negator: Number of new negated instructions created in successful negation sinking attempts
+   2 instcombine                  - Negator: Number of negations successfully sinked
+  22 instcombine                  - Negator: Total number of values visited during attempts to sink negation
+  18 instcombine                  - Negator: Number of negations attempted to be sinked
+ 152 instcombine                  - Number of insts combined
+  29 instcombine                  - Number of dead inst eliminated
+   2 instcombine                  - Number of dead stores eliminated
+   3 instcombine                  - Number of reassociations
+   3 instcombine                  - Number of library calls simplified
+   5 instcombine                  - Number of instructions sunk
+  22 instcombine                  - Number of instruction combining iterations performed
+  10 ir                           - Number of renumberings across all blocks
+  65 mem2reg                      - Number of PHI nodes inserted
+  42 mem2reg                      - Number of alloca's promoted
+  18 mem2reg                      - Number of alloca's promoted with a single store
+   8 memory-builtins              - Number of arguments with unsolved size and offset
+  11 reassociate                  - Number of insts reassociated
+  61 simplifycfg                  - Number of blocks simplified
+   7 simplifycfg                  - Number of speculative executed instructions
+   7 sroa                         - Number of allocas analyzed for replacement
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./lpbench.ll -o lpbench_opt.ll
+UnitLICM running on matgen
+UnitLoopAnalysis running on matgen
+UnitLICM running on idamax
+UnitLoopAnalysis running on idamax
+UnitLICM running on dscal
+UnitLoopAnalysis running on dscal
+UnitLICM running on daxpy
+UnitLoopAnalysis running on daxpy
+UnitLICM running on dgefa
+UnitLoopAnalysis running on dgefa
+UnitLICM running on dgesl
+UnitLoopAnalysis running on dgesl
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on random_double
+UnitLoopAnalysis running on random_double
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  2 UnitLICM                     - Number of computational instructions hoisted
+ 35 aa                           - Number of MayAlias results
+ 36 aa                           - Number of MustAlias results
+ 38 aa                           - Number of NoAlias results
+916 assume-queries               - Number of Queries into an assume assume bundles
+160 basicaa                      - Number of times a GEP is decomposed
+  2 correlated-value-propagation - Number of comparisons propagated
+  2 correlated-value-propagation - Number of no-signed-wrap deductions for mul
+  2 correlated-value-propagation - Number of no-wrap deductions for mul
+  2 correlated-value-propagation - Number of no-signed-wrap deductions
+  3 correlated-value-propagation - Number of no-unsigned-wrap deductions
+  5 correlated-value-propagation - Number of no-wrap deductions
+  7 correlated-value-propagation - Number of phis propagated
+  2 correlated-value-propagation - Number of sext converted to zext
+  1 correlated-value-propagation - Number of signed icmp preds simplified to unsigned
+  3 correlated-value-propagation - Number of no-unsigned-wrap deductions for sub
+  3 correlated-value-propagation - Number of no-wrap deductions for sub
+ 40 early-cse                    - Number of instructions CSE'd
+  1 early-cse                    - Number of compare instructions CVP'd
+  4 early-cse                    - Number of load instructions CSE'd
+  2 early-cse                    - Number of trivial dead stores removed
+  2 globaldce                    - Number of functions removed
+  1 inline                       - Number of functions deleted because all callers found
+  7 inline                       - Number of functions inlined
+  9 inline-cost                  - Number of call sites analyzed
+  1 instcombine                  - Negator: Maximal traversal depth ever reached while attempting to sink negation
+  1 instcombine                  - Negator: Maximal number of new instructions created during negation attempt
+  2 instcombine                  - Negator: Maximal number of values ever visited while attempting to sink negation
+  2 instcombine                  - Negator: Number of new negated instructions created, total
+  2 instcombine                  - Negator: Number of new negated instructions created in successful negation sinking attempts
+  2 instcombine                  - Negator: Number of negations successfully sinked
+ 40 instcombine                  - Negator: Total number of values visited during attempts to sink negation
+ 38 instcombine                  - Negator: Number of negations attempted to be sinked
+121 instcombine                  - Number of insts combined
+  7 instcombine                  - Number of dead inst eliminated
+  2 instcombine                  - Number of dead stores eliminated
+  3 instcombine                  - Number of instructions sunk
+ 38 instcombine                  - Number of instruction combining iterations performed
+  4 ir                           - Number of renumberings across all blocks
+  1 jump-threading               - Number of terminators folded
+  1 jump-threading               - Number of jumps threaded
+  2 local                        - Number of unreachable basic blocks removed
+ 37 mem2reg                      - Number of PHI nodes inserted
+ 62 mem2reg                      - Number of alloca's promoted
+ 41 mem2reg                      - Number of alloca's promoted with a single store
+  6 memory-builtins              - Number of arguments with unsolved size and offset
+ 26 memory-builtins              - Number of load instructions with unsolved size and offset
+ 24 reassociate                  - Number of insts reassociated
+  2 simplifycfg                  - Number of branches folded into predecessor basic block
+ 70 simplifycfg                  - Number of blocks simplified
+  2 simplifycfg                  - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./matmul.ll -o matmul_opt.ll
+UnitLICM running on matmul
+UnitLoopAnalysis running on matmul
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+16 aa              - Number of MayAlias results
+ 8 aa              - Number of MustAlias results
+60 assume-queries  - Number of Queries into an assume assume bundles
+32 basicaa         - Number of times a GEP is decomposed
+ 9 early-cse       - Number of instructions CSE'd
+ 2 globaldce       - Number of functions removed
+15 instcombine     - Number of insts combined
+ 3 instcombine     - Number of dead inst eliminated
+ 4 instcombine     - Number of instruction combining iterations performed
+ 3 mem2reg         - Number of PHI nodes inserted
+10 mem2reg         - Number of alloca's promoted
+ 6 mem2reg         - Number of alloca's promoted with a single store
+12 memory-builtins - Number of arguments with unsolved size and offset
+ 4 reassociate     - Number of insts reassociated
+ 7 simplifycfg     - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./n-body.ll -o n-body_opt.ll
+UnitLICM running on advance
+UnitLoopAnalysis running on advance
+UnitLICM running on energy
+UnitLoopAnalysis running on energy
+UnitLICM running on offset_momentum
+UnitLoopAnalysis running on offset_momentum
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 13 UnitLICM        - Number of computational instructions hoisted
+ 10 UnitLICM        - Number of load instructions hoisted
+ 27 aa              - Number of MayAlias results
+ 33 aa              - Number of MustAlias results
+289 aa              - Number of NoAlias results
+820 assume-queries  - Number of Queries into an assume assume bundles
+632 basicaa         - Number of times a GEP is decomposed
+ 19 early-cse       - Number of instructions CSE'd
+  7 early-cse       - Number of load instructions CSE'd
+  2 globaldce       - Number of functions removed
+  3 inline          - Number of functions inlined
+  4 inline-cost     - Number of call sites analyzed
+174 instcombine     - Number of insts combined
+ 26 instcombine     - Number of dead inst eliminated
+ 26 instcombine     - Number of instructions sunk
+ 21 instcombine     - Number of instruction combining iterations performed
+  3 ir              - Number of renumberings across all blocks
+ 12 mem2reg         - Number of PHI nodes inserted
+ 35 mem2reg         - Number of alloca's promoted
+ 25 mem2reg         - Number of alloca's promoted with a single store
+ 56 memory-builtins - Number of arguments with unsolved size and offset
+  9 simplifycfg     - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./nesting.ll -o nesting_opt.ll
+UnitLICM running on foo
+UnitLoopAnalysis running on foo
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 globaldce      - Number of functions removed
+1 instcombine    - Negator: Maximal traversal depth ever reached while attempting to sink negation
+2 instcombine    - Negator: Maximal number of values ever visited while attempting to sink negation
+4 instcombine    - Negator: Total number of values visited during attempts to sink negation
+2 instcombine    - Negator: Number of negations attempted to be sinked
+4 instcombine    - Number of insts combined
+5 instcombine    - Number of instruction combining iterations performed
+2 jump-threading - Number of terminators folded
+1 local          - Number of unreachable basic blocks removed
+5 mem2reg        - Number of PHI nodes inserted
+3 mem2reg        - Number of alloca's promoted
+4 reassociate    - Number of insts reassociated
+2 sccp           - Number of basic blocks unreachable
+9 sccp           - Number of instructions removed
+3 simplifycfg    - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./nsieve-bits.ll -o nsieve-bits_opt.ll
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 1 UnitLICM                     - Number of computational instructions hoisted
+ 7 aa                           - Number of MayAlias results
+ 8 aa                           - Number of MustAlias results
+68 assume-queries               - Number of Queries into an assume assume bundles
+14 basicaa                      - Number of times a GEP is decomposed
+ 2 correlated-value-propagation - Number of no-unsigned-wrap deductions
+ 2 correlated-value-propagation - Number of no-wrap deductions
+ 2 correlated-value-propagation - Number of no-unsigned-wrap deductions for shl
+ 2 correlated-value-propagation - Number of no-wrap deductions for shl
+ 5 early-cse                    - Number of instructions CSE'd
+ 1 early-cse                    - Number of load instructions CSE'd
+ 2 globaldce                    - Number of functions removed
+35 instcombine                  - Number of insts combined
+ 3 instcombine                  - Number of constant folds
+10 instcombine                  - Number of dead inst eliminated
+ 4 instcombine                  - Number of instruction combining iterations performed
+ 2 ir                           - Number of renumberings across all blocks
+ 6 mem2reg                      - Number of PHI nodes inserted
+11 mem2reg                      - Number of alloca's promoted
+ 5 mem2reg                      - Number of alloca's promoted with a single store
+ 4 reassociate                  - Number of insts reassociated
+ 6 simplifycfg                  - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./one-iter.ll -o one-iter_opt.ll
+UnitLICM running on foo
+UnitLoopAnalysis running on foo
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 globaldce      - Number of functions removed
+1 instcombine    - Negator: Maximal traversal depth ever reached while attempting to sink negation
+2 instcombine    - Negator: Maximal number of values ever visited while attempting to sink negation
+4 instcombine    - Negator: Total number of values visited during attempts to sink negation
+2 instcombine    - Negator: Number of negations attempted to be sinked
+4 instcombine    - Number of insts combined
+3 instcombine    - Number of dead inst eliminated
+1 instcombine    - Number of reassociations
+1 instcombine    - Number of instructions sunk
+4 instcombine    - Number of instruction combining iterations performed
+1 jump-threading - Number of terminators folded
+2 mem2reg        - Number of PHI nodes inserted
+3 mem2reg        - Number of alloca's promoted
+2 mem2reg        - Number of alloca's promoted with a single store
+6 sccp           - Number of instructions removed
+4 simplifycfg    - Number of blocks simplified
+1 simplifycfg    - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./partialsums.ll -o partialsums_opt.ll
+UnitLICM running on make_vec
+UnitLoopAnalysis running on make_vec
+UnitLICM running on sum_vec
+UnitLoopAnalysis running on sum_vec
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  2 UnitLICM       - Number of computational instructions hoisted
+ 20 aa             - Number of MustAlias results
+ 51 assume-queries - Number of Queries into an assume assume bundles
+ 13 early-cse      - Number of instructions simplified or DCE'd
+  2 globaldce      - Number of functions removed
+ 11 inline         - Number of functions inlined
+ 11 inline-cost    - Number of call sites analyzed
+ 46 instcombine    - Number of insts combined
+  2 instcombine    - Number of constant folds
+ 25 instcombine    - Number of instructions sunk
+ 15 instcombine    - Number of instruction combining iterations performed
+ 11 mem2reg        - Number of PHI nodes inserted
+ 27 mem2reg        - Number of alloca's promoted
+ 23 mem2reg        - Number of alloca's promoted with a single store
+  3 simplifycfg    - Number of blocks simplified
+  1 sroa           - Maximum number of partitions per alloca
+  7 sroa           - Maximum number of uses of a partition
+ 70 sroa           - Number of alloca partition uses rewritten
+ 14 sroa           - Number of alloca partitions formed
+ 14 sroa           - Number of allocas analyzed for replacement
+123 sroa           - Number of instructions deleted
+ 14 sroa           - Number of allocas promoted to SSA values
+ 14 sroa           - Number of vectorized aggregates
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./puzzle.ll -o puzzle_opt.ll
+UnitLICM running on rand
+UnitLoopAnalysis running on rand
+UnitLICM running on srand
+UnitLoopAnalysis running on srand
+UnitLICM running on randInt
+UnitLoopAnalysis running on randInt
+UnitLICM running on shuffle
+UnitLoopAnalysis running on shuffle
+UnitLICM running on createRandomArray
+UnitLoopAnalysis running on createRandomArray
+UnitLICM running on findDuplicate
+UnitLoopAnalysis running on findDuplicate
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  3 aa              - Number of MayAlias results
+  4 aa              - Number of MustAlias results
+211 assume-queries  - Number of Queries into an assume assume bundles
+  8 basicaa         - Number of times a GEP is decomposed
+  9 early-cse       - Number of instructions CSE'd
+  2 early-cse       - Number of instructions simplified or DCE'd
+  2 globaldce       - Number of functions removed
+  6 inline          - Number of functions inlined
+  7 inline-cost     - Number of call sites analyzed
+  0 instcombine     - Negator: Maximal traversal depth ever reached while attempting to sink negation
+  1 instcombine     - Negator: Maximal number of values ever visited while attempting to sink negation
+  6 instcombine     - Negator: Total number of values visited during attempts to sink negation
+  6 instcombine     - Negator: Number of negations attempted to be sinked
+ 46 instcombine     - Number of insts combined
+  4 instcombine     - Number of dead inst eliminated
+  6 instcombine     - Number of instructions sunk
+ 34 instcombine     - Number of instruction combining iterations performed
+  7 instsimplify    - Number of reassociations
+  4 ir              - Number of renumberings across all blocks
+  8 mem2reg         - Number of PHI nodes inserted
+ 24 mem2reg         - Number of alloca's promoted
+ 17 mem2reg         - Number of alloca's promoted with a single store
+  6 memory-builtins - Number of arguments with unsolved size and offset
+  5 reassociate     - Number of insts reassociated
+ 14 simplifycfg     - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./random.ll -o random_opt.ll
+UnitLICM running on foo
+UnitLoopAnalysis running on foo
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+1 correlated-value-propagation - Number of no-signed-wrap deductions for add
+1 correlated-value-propagation - Number of no-wrap deductions for add
+1 correlated-value-propagation - Number of no-signed-wrap deductions
+1 correlated-value-propagation - Number of no-wrap deductions
+2 globaldce                    - Number of functions removed
+0 instcombine                  - Negator: Maximal traversal depth ever reached while attempting to sink negation
+1 instcombine                  - Negator: Maximal number of new instructions created during negation attempt
+1 instcombine                  - Negator: Maximal number of values ever visited while attempting to sink negation
+1 instcombine                  - Negator: Number of new negated instructions created, total
+1 instcombine                  - Negator: Number of new negated instructions created in successful negation sinking attempts
+1 instcombine                  - Negator: Number of negations successfully sinked
+1 instcombine                  - Negator: Total number of values visited during attempts to sink negation
+1 instcombine                  - Negator: Number of negations attempted to be sinked
+4 instcombine                  - Number of insts combined
+1 instcombine                  - Number of dead inst eliminated
+4 instcombine                  - Number of instruction combining iterations performed
+3 mem2reg                      - Number of PHI nodes inserted
+3 mem2reg                      - Number of alloca's promoted
+1 mem2reg                      - Number of alloca's promoted with a single store
+4 reassociate                  - Number of insts reassociated
+4 sccp                         - Number of instructions removed
+3 simplifycfg                  - Number of blocks simplified
+1 simplifycfg                  - Number of speculative executed instructions
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./recursive.ll -o recursive_opt.ll
+UnitLICM running on ack
+UnitLoopAnalysis running on ack
+UnitLICM running on fib
+UnitLoopAnalysis running on fib
+UnitLICM running on fibFP
+UnitLoopAnalysis running on fibFP
+UnitLICM running on tak
+UnitLoopAnalysis running on tak
+UnitLICM running on takFP
+UnitLoopAnalysis running on takFP
+UnitLICM running on main
+UnitLoopAnalysis running on main
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+ 2 globaldce   - Number of functions removed
+19 inline-cost - Number of call sites analyzed
+19 instcombine - Number of insts combined
+10 instcombine - Number of constant folds
+24 instcombine - Number of instruction combining iterations performed
+ 5 mem2reg     - Number of PHI nodes inserted
+19 mem2reg     - Number of alloca's promoted
+14 mem2reg     - Number of alloca's promoted with a single store
+ 1 reassociate - Number of insts reassociated
+ 5 simplifycfg - Number of blocks simplified
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./spectral-norm.ll -o spectral-norm_opt.ll
+UnitLICM running on eval_A
+UnitLoopAnalysis running on eval_A
+UnitLICM running on eval_A_times_u
+UnitLoopAnalysis running on eval_A_times_u
+UnitLICM running on eval_At_times_u
+UnitLoopAnalysis running on eval_At_times_u
+UnitLICM running on eval_AtA_times_u
+UnitLoopAnalysis running on eval_AtA_times_u
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on atoi
+UnitLoopAnalysis running on atoi
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+  6 aa             - Number of MayAlias results
+ 17 aa             - Number of MustAlias results
+227 assume-queries - Number of Queries into an assume assume bundles
+ 24 basicaa        - Number of times a GEP is decomposed
+ 19 early-cse      - Number of instructions CSE'd
+  2 early-cse      - Number of load instructions CSE'd
+  5 globaldce      - Number of functions removed
+  5 inline         - Number of functions inlined
+  7 inline-cost    - Number of call sites analyzed
+ 53 instcombine    - Number of insts combined
+  2 instcombine    - Number of dead inst eliminated
+ 14 instcombine    - Number of instructions sunk
+ 27 instcombine    - Number of instruction combining iterations performed
+  1 ir             - Number of renumberings across all blocks
+  9 mem2reg        - Number of PHI nodes inserted
+ 28 mem2reg        - Number of alloca's promoted
+ 20 mem2reg        - Number of alloca's promoted with a single store
+ 20 reassociate    - Number of insts reassociated
+ 11 simplifycfg    - Number of blocks simplified
+  1 sroa           - Number of allocas analyzed for replacement
+
+../../llvm-14.0.0.src/build/bin/opt -S -stats -load-pass-plugin=../build/libUnitProject.so -passes="function(mem2reg,loop-simplify,unit-licm,instcombine,simplifycfg,adce),inline,globaldce,function(sroa,early-cse,sccp,jump-threading,correlated-propagation,simplifycfg,instcombine,simplifycfg,reassociate,adce,simplifycfg,instcombine),globaldce" ./whetstone.ll -o whetstone_opt.ll
+UnitLICM running on main
+UnitLoopAnalysis running on main
+UnitLICM running on atol
+UnitLoopAnalysis running on atol
+UnitLICM running on POUT
+UnitLoopAnalysis running on POUT
+UnitLICM running on PA
+UnitLoopAnalysis running on PA
+UnitLICM running on P3
+UnitLoopAnalysis running on P3
+UnitLICM running on P0
+UnitLoopAnalysis running on P0
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+   17 UnitLICM       - Number of computational instructions hoisted
+   47 UnitLICM       - Number of load instructions hoisted
+    5 UnitLICM       - Number of store instructions hoisted
+  470 aa             - Number of MayAlias results
+ 4496 aa             - Number of MustAlias results
+17855 aa             - Number of NoAlias results
+ 1313 assume-queries - Number of Queries into an assume assume bundles
+ 4132 basicaa        - Number of times a GEP is decomposed
+    2 build-libcalls - Number of arguments inferred as nocapture
+    7 build-libcalls - Number of function returns inferred as noundef returns
+    2 build-libcalls - Number of functions inferred as nounwind
+   21 early-cse      - Number of instructions CSE'd
+    6 early-cse      - Number of load instructions CSE'd
+    2 early-cse      - Number of trivial dead stores removed
+    2 early-cse      - Number of instructions simplified or DCE'd
+    4 globaldce      - Number of functions removed
+    1 globaldce      - Number of global variables removed
+   15 inline         - Number of functions inlined
+   15 inline-cost    - Number of call sites analyzed
+    1 instcombine    - Negator: Maximal traversal depth ever reached while attempting to sink negation
+    2 instcombine    - Negator: Maximal number of new instructions created during negation attempt
+    3 instcombine    - Negator: Maximal number of values ever visited while attempting to sink negation
+    2 instcombine    - Negator: Number of new negated instructions created, total
+    2 instcombine    - Negator: Number of new negated instructions created in successful negation sinking attempts
+    1 instcombine    - Negator: Number of negations successfully sinked
+   23 instcombine    - Negator: Total number of values visited during attempts to sink negation
+   21 instcombine    - Negator: Number of negations attempted to be sinked
+  120 instcombine    - Number of insts combined
+   16 instcombine    - Number of constant folds
+   48 instcombine    - Number of dead inst eliminated
+    1 instcombine    - Number of factorizations
+    2 instcombine    - Number of library calls simplified
+   10 instcombine    - Number of instructions sunk
+   24 instcombine    - Number of instruction combining iterations performed
+    3 instsimplify   - Number of reassociations
+    5 ir             - Number of renumberings across all blocks
+    5 local          - Number of unreachable basic blocks removed
+    1 mem2reg        - Number of dead alloca's removed
+    2 mem2reg        - Number of alloca's promoted within one block
+   24 mem2reg        - Number of PHI nodes inserted
+   43 mem2reg        - Number of alloca's promoted
+   27 mem2reg        - Number of alloca's promoted with a single store
+    8 reassociate    - Number of insts reassociated
+    1 simplifycfg    - Number of common instruction 'blocks' hoisted up to the begin block
+    1 simplifycfg    - Number of common instructions hoisted up to the begin block
+   51 simplifycfg    - Number of blocks simplified
+    1 sroa           - Maximum number of partitions per alloca
+    4 sroa           - Maximum number of uses of a partition
+    4 sroa           - Number of alloca partition uses rewritten
+    1 sroa           - Number of alloca partitions formed
+    1 sroa           - Number of allocas analyzed for replacement
+    6 sroa           - Number of instructions deleted
+    1 sroa           - Number of allocas promoted to SSA values

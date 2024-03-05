@@ -1,0 +1,10 @@
+(* random comments
+
+(*
+*)
+random comments
+*)
+
+class Main {
+    a : Int <- "this is escape test";
+};

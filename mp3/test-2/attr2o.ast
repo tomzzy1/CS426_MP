@@ -1,0 +1,71 @@
+#14
+_program
+  #8
+  _class
+    Alpha
+    Object
+    "attr2o.cl"
+    (
+    #6
+    _attr
+      x
+      Int
+      #6
+      _int
+        67
+      : Int
+    #7
+    _method
+      getX
+      Int
+      #7
+      _object
+        x
+      : Int
+    )
+  #14
+  _class
+    Main
+    IO
+    "attr2o.cl"
+    (
+    #12
+    _attr
+      x
+      Alpha
+      #12
+      _new
+        Alpha
+      : Alpha
+    #13
+    _method
+      main
+      Object
+      #13
+      _block
+        #13
+        _dispatch
+          #13
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #13
+          _dispatch
+            #13
+            _object
+              x
+            : Alpha
+            getX
+            (
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #13
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
